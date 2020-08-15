@@ -1,0 +1,16 @@
+.card-wrapper {
+    border: 2px solid var(--app-support-light-grey);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.card-wrapper-container {
+    width: 100%;
+}
+
+.card-wrapper-h3 {
+    color: var(--app-support-grey);
+    text-align: left;
+    font-size: small;
+}

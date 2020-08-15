@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* DEFAULT COLORS */
+:root {
+  --app-brand-color: rgb(66, 146, 157);
+  --app-brand-ligh-color: #b6ddc7;
+  --app-success-color: #20CB59;
+  --app-success-light-color: #b7eb8f;
+  --app-brand-dark-color: rgb(0, 128, 128);
+  --app-support-yellow: rgb(255, 249, 116);
+  --app-support-light-grey: #f1f3f4;
+  --app-support-grey: #9d9fa5;
+  --app-warning-color: #F9CD47;
+  --app-warning-light-color: #ffe9a9;
+  --app-danger-color: #F94770;
+  --app-danger-light-color: #ffcad6;
+  --app-primary-color: #40a9ff;
+  --app-primary-ligth-color: #e6f7fe;
+  --app-success-over-color: #89b369;
+}

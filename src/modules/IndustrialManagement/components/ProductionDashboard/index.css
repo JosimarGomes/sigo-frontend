@@ -1,0 +1,75 @@
+.management-reports-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-report {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.card-report h3 {
+    line-height: normal;
+    margin: 0;
+}
+
+.card-report h1 {
+    font-size: xx-large;
+    line-height: normal;
+}
+
+.card-report-success {
+    background: var(--app-success-light-color);
+    border: var(--app-success-over-color) 1px solid;
+}
+
+.card-report-primary {
+    background: var(--app-primary-ligth-color);
+    border: var(--app-primary-color) 1px solid;
+}
+
+.card-report-warning {
+    background: var(--app-warning-light-color);
+    border: var(--app-warning-color) 1px solid;
+}
+
+.card-report-danger {
+    background: var(--app-danger-light-color);
+    border: var(--app-danger-color) 1px solid;
+}
+
+.card-report-large-icon {
+    font-size: 30px;
+    color: var(--app-danger-color);
+    margin-right: 10px;
+}
+
+.card-report-alert-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-report-alert-large h2 {
+    line-height: normal;
+    margin: 0;
+}
+
+.card-tag {
+    padding: 5px;
+    width: 150px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.card-tag:hover, .card-report-alert-large:hover, .card-report:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

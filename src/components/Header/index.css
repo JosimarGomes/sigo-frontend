@@ -1,0 +1,10 @@
+.menu-header {
+    justify-content: center;
+    display: flex;
+}
+
+.user-profile {
+    padding: 10px;
+    border: 1px solid var(--app-support-light-grey);
+    margin-top: 2px;
+}

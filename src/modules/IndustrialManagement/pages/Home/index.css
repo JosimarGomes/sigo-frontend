@@ -1,0 +1,9 @@
+.button-actions-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0px;
+}
+
+.action-button {
+    margin-right: 10px;
+}

@@ -1,0 +1,4 @@
+.list-item-hover:hover {
+    cursor: pointer;
+    background-color: var(--app-support-light-grey);
+}
