@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 
 const { Item } = Form; 
 
 export default function ConsultantForm({ onSubmit, isFormEdit, company }) {
+
+    const [loading, setLoading] = useState(false);
 
     const layout = {
         labelCol: { span: 5 },
@@ -17,7 +19,9 @@ export default function ConsultantForm({ onSubmit, isFormEdit, company }) {
     function submitForm(fieldsValue) {
         let objToSave = fieldsValue;
 
-        onSubmit(objToSave);
+        setLoading(true);
+        onSubmit(objToSave)
+            .finally(() => setLoading(false));
     }
 
     return (
@@ -35,7 +39,10 @@ export default function ConsultantForm({ onSubmit, isFormEdit, company }) {
                 <Input type="text" />
             </Item>
             <Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button
+                    loading={loading}
+                    type="primary"
+                    htmlType="submit">
                     Salvar
                 </Button>
             </Item>

@@ -62,7 +62,7 @@ export default function CompanyTable() {
     }
 
     function submitCompanyForm(values) {
-        apiService.post('/empresas', values)
+        return apiService.post('/empresas', values)
         .then(res => {
             message.success("Salvou com sucesso");
             setShowCompanyForm(false);

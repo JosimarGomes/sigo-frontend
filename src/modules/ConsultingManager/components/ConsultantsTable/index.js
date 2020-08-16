@@ -46,7 +46,7 @@ export default function ConsultantTable() {
     }
 
     function submitConsultantForm(values) {
-        apiService.post(`/empresas/${id}/consultores`, values)
+        return apiService.post(`/empresas/${id}/consultores`, values)
         .then(res => {
             message.success('Salvou com sucesso');
             setShowConsultantForm(false);

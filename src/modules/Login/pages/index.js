@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
 
 import apiService from 'services/api';
@@ -6,8 +6,10 @@ import * as auth from 'services/auth';
 
 const { Item } = Form;
 export default function LoginPage(props) {
-console.log("props", props)
+
+    const [loading, setLoading] = useState(false);
     function onSubmit({ email, senha }) {
+        setLoading(true);
         apiService.post(`/auth`, { email, senha })
         .then(res => {
             console.log("res", res)
@@ -18,6 +20,7 @@ console.log("props", props)
             console.log("err")
             message.error("Erro ao realizar login")
         })
+        .finally(() => setLoading(false));
     }
 
     return (
@@ -30,7 +33,10 @@ console.log("props", props)
                 <Item label="Senha" name="senha">
                     <Input type="password" />
                 </Item>
-                <Button type="primary" htmlType="submit">
+                <Button
+                    loading={loading}
+                    type="primary"
+                    htmlType="submit">
                     Entrar
                 </Button>
             </Form>

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 
 const { Item } = Form; 
 
 export default function CompanyForm({ onSubmit, isFormEdit, company }) {
+
+    const [loading, setLoading] = useState(false);
+
     const layout = {
         labelCol: { span: 5 },
         wrapperCol: { span: 16 },
@@ -16,7 +19,9 @@ export default function CompanyForm({ onSubmit, isFormEdit, company }) {
     function submitForm(fieldsValue) {
         let objToSave = fieldsValue;
 
-        onSubmit(objToSave);
+        setLoading(true);
+        onSubmit(objToSave)
+            .finally(() => setLoading(false));
     }
 
     if (isFormEdit && !company.id) {
@@ -52,7 +57,10 @@ export default function CompanyForm({ onSubmit, isFormEdit, company }) {
                 <Input type="text" />
             </Item>
             <Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button
+                    loading={loading}
+                    type="primary"
+                    htmlType="submit">
                     Salvar
                 </Button>
             </Item>
