@@ -42,7 +42,7 @@ export default function LoginPage(props) {
             </Form>
             <Alert
                 style={{ marginTop: 75 }}
-                message="Logar como administrador"
+                message="Logar como gestor"
                 description={<><p>email: <b>gestorteste@gmail.com</b></p><p>senha padrão para todos os logins: <b>12345</b></p></>}
                 type="info"
                 />
