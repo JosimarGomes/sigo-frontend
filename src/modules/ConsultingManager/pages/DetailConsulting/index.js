@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Spin, Space } from 'antd';
 
 import { ConsultingForm } from '../../components';
 import { useConsultingContext, types } from '../../components/ConsultingForm/ConsultingFormContext';
@@ -30,10 +31,20 @@ export default function DetailConsulting(props) {
     function onSubmit(values) {
         console.log("UPDATE VALUES", values)
         dispacth({ type: types.SET_CONSULTING_VALUES, payload: values });
+
+        return new Promise((res) => {
+            setTimeout(() => {
+                res('ok')
+            }, 1000);
+        })
     }
 
     if (isFetching) {
-        return <h1>Carregando...</h1>
+        return (
+            <Space size="middle">
+                <Spin size="large" />
+            </Space>
+        )
     }
 
     return (

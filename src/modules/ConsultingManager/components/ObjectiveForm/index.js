@@ -36,13 +36,8 @@ export default function ObjectiveForm({ objective = { dataLimite: new Date() }, 
             onFinish={submitForm}
             initialValues={initialValues}
             {...layout}>
-            <Item name="id">
-                <input
-                    type="hidden"
-                     />
-            </Item>
             <Item>
-                { isFormEdit ? <h3>Editar Objetivo</h3> : <h3>Novo Objetivo</h3> }
+                { isFormEdit ? <h3>Editar Atividade</h3> : <h3>Nova Atividade</h3> }
             </Item>
             <Item label="Data Entrega" name="dataLimite">
                 <input
@@ -57,6 +52,11 @@ export default function ObjectiveForm({ objective = { dataLimite: new Date() }, 
             </Item>
             <Item label="Responsável" name="responsavel">
                 <Input type="text" />
+            </Item>
+            <Item name="id">
+                <input
+                    type="hidden"
+                     />
             </Item>
             <Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">

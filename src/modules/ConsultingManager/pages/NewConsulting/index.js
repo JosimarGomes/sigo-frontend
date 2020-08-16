@@ -7,18 +7,17 @@ import apiService from 'services/api';
 export default function DetailConsulting(props) {    
 
     function onSubmit(values) {
-        console.log("vakues", JSON.stringify(values))
-        // apiService.post('/consultorias', values)
-        // .then(res => {
-        //     message.success("Salvou com sucesso");
-        //     setTimeout(() => {
-        //         props.history.push('/consulting');
-        //     }, 1000)
-        // })
-        // .catch(err => {
-        //     console.log("err", err)
-        //     message.error("Erro ao salvar consultoria")
-        // })
+        return apiService.post('/consultorias', values)
+        .then(res => {
+            message.success("Salvou com sucesso");
+            setTimeout(() => {
+                props.history.push('/consulting');
+            }, 1000)
+        })
+        .catch(err => {
+            console.log("err", err)
+            message.error("Erro ao salvar consultoria")
+        })
     }
 
     return (

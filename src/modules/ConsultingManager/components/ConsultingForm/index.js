@@ -26,6 +26,7 @@ export default function ConsultingForm({ onSubmit, isFormEdit }) {
 
     const [companies, setCompanies] = useState([]);
     const [consulting, dispacth] = useConsultingContext();
+    const [loadingButton, setLoadingButton] = useState(false);
 
     useEffect(() => {
         searchCompanies();
@@ -42,7 +43,6 @@ export default function ConsultingForm({ onSubmit, isFormEdit }) {
     }
 
     function onSubmitObjectiveForm(values) {
-        console.log("values", values)
         dispacth({ type: types.SET_OBJECTIVE_VALUES, payload: values });
     }
 
@@ -51,13 +51,13 @@ export default function ConsultingForm({ onSubmit, isFormEdit }) {
     }
 
     function onSelectConsultant(values) {
-        console.log("no inicio", values)
         dispacth({ type: types.SET_CONSULTANT_VALUES, payload: values });
     }
 
     function onFinish() {
-        console.log("VALIDATE", consulting)
-        onSubmit(consulting);
+        setLoadingButton(true);
+        onSubmit(consulting)
+        .finally(() => setLoadingButton(false));
     }
 
     function changeValue(event) {
@@ -215,7 +215,10 @@ export default function ConsultingForm({ onSubmit, isFormEdit }) {
                     </Card>
                 </Item>
                 <Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">
+                    <Button
+                        loading={loadingButton}
+                        type="primary"
+                        htmlType="submit">
                         Salvar
                     </Button>
                 </Item>

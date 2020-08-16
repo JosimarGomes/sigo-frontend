@@ -4,8 +4,6 @@ import { Form, Input, Button } from 'antd';
 const { Item } = Form; 
 
 export default function CompanyForm({ onSubmit, isFormEdit, company }) {
-    console.log("company", company)
-
     const layout = {
         labelCol: { span: 5 },
         wrapperCol: { span: 16 },
@@ -26,10 +24,15 @@ export default function CompanyForm({ onSubmit, isFormEdit, company }) {
     }
 
     return (
-        <Form onFinish={submitForm} initialValues={company} {...layout}>
-            <Item>
-                <h3>Nova empresa</h3>
-            </Item>
+        <Form
+            onFinish={submitForm}
+            initialValues={company} {...layout}>
+            {
+                !isFormEdit &&
+                <Item>
+                    <h3>Nova empresa</h3>
+                </Item>
+            }
             <Item label="Nome" name="nome">
                 <Input type="text" />
             </Item>
