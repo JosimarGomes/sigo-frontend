@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, message } from 'antd';
+import { Form, Input, Button, message, Alert } from 'antd';
 
 import apiService from 'services/api';
 import * as auth from 'services/auth';
@@ -40,6 +40,12 @@ export default function LoginPage(props) {
                     Entrar
                 </Button>
             </Form>
+            <Alert
+                style={{ marginTop: 75 }}
+                message="Logar como administrador"
+                description={<><p>email: <b>gestorteste@gmail.com</b></p><p>senha padrão para todos os logins: <b>12345</b></p></>}
+                type="info"
+                />
         </div>
     )
 }
