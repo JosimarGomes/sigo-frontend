@@ -76,7 +76,7 @@ export default function NewRegulation(props) {
                 <Input.Search
                     placeholder="Pesquisar"
                     onSearch={searchRegulation}
-                    style={{ width: 400 }}
+                    style={{ width: 300 }}
                     enterButton
                     />
             </div>

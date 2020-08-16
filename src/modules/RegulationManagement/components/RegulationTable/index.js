@@ -7,9 +7,10 @@ import ButtonToolBar from 'components/ButtonToolBar';
 
 import apiService from 'services/api';
 import { decodeToken, getToken } from 'services/auth';
+import Column from 'antd/lib/table/Column';
 
 
-const columns = [
+let columns = [
     {
         title: 'Norma',
         dataIndex: 'nome',
@@ -39,6 +40,10 @@ const columns = [
         )
     }
 ];
+
+if (window.innerWidth <= 480) {
+    columns = columns.filter(column => column.key !== 'descricao');
+}
 
 export default function Regulationtable() {
 
